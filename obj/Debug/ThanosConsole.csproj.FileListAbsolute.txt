@@ -1,0 +1,7 @@
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\bin\Debug\ThanosConsole.exe.config
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\bin\Debug\ThanosConsole.exe
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\bin\Debug\ThanosConsole.pdb
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\obj\Debug\ThanosConsole.csprojResolveAssemblyReference.cache
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\obj\Debug\ThanosConsole.csproj.CoreCompileInputs.cache
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\obj\Debug\ThanosConsole.exe
+D:\Youssef'z\FCIS\Year2 S2\Algo\Project\ThanosConsole\ThanosConsole\obj\Debug\ThanosConsole.pdb
