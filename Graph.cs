@@ -9,12 +9,19 @@ namespace Graph
     {
         public int weight;
         public string movie;
-        public Node next;
-        public Edge(Node node, string movie, int weight)
+        public UnorderedPair<Node> ends;
+        // public Node next;
+        public Edge(Node node1, Node node2, string movie, int weight)
         {
-            next = node;
             this.movie = movie;
             this.weight = weight;
+            ends = new UnorderedPair<Node>(node1, node2);
+        }
+        public Node Next(Node prev)
+        {
+            if (ends.Item1 == prev)
+                return ends.Item2;
+            return ends.Item1;
         }
         public static void AddEdge(string name1, string name2, string movie)
         {
@@ -38,14 +45,15 @@ namespace Graph
                 node2 = Program.allNodes[name2];
             }
             node1.addNode(node2, movie);
-            node2.addNode(node1, movie);
+            //node2.addNode(node1, movie);
         }
     }
 
     public class Node
     {
         public string name;
-        public Dictionary<string, Edge> neighbours;
+        public Dictionary<string, Edge> neighbours; // Dol direct neighbours (Degree 1)
+        //public Discoveries 
         public Node(String name)
         {
             this.name = name;
@@ -53,11 +61,14 @@ namespace Graph
         }
 
 
-        public void addNode(Node other, string movie)
+        public void addNode(Node other, string movie) // ¯\_(ツ)_/¯
         {
             if (!neighbours.ContainsKey(other.name))
             {
-                neighbours.Add(other.name, new Edge(other, movie, 1));
+                Edge Microsoft = new Edge(this, other, movie, 1);
+                neighbours.Add(other.name, Microsoft);
+                other.neighbours.Add(name, Microsoft);
+                //neighbours.Add(other.name, new Edge(other, movie, 1)); 
             }
             else
             {
