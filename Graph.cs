@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Driver;
+using Solution;
 
 namespace Graph
 {
@@ -10,7 +11,7 @@ namespace Graph
         public int weight;
         public string movie;
         public UnorderedPair<Node> ends;
-        // public Node next;
+
         public Edge(Node node1, Node node2, string movie, int weight)
         {
             this.movie = movie;
@@ -45,19 +46,21 @@ namespace Graph
                 node2 = Program.allNodes[name2];
             }
             node1.addNode(node2, movie);
-            //node2.addNode(node1, movie);
+
         }
     }
 
     public class Node
     {
         public string name;
+        public BFSinfo info;
         public Dictionary<string, Edge> neighbours; // Dol direct neighbours (Degree 1)
-        //public Discoveries 
+        public Dictionary<Node, Node> discoveries;
         public Node(String name)
         {
             this.name = name;
             neighbours = new Dictionary<string, Edge>();
+            discoveries = new Dictionary<Node, Node>();
         }
 
 

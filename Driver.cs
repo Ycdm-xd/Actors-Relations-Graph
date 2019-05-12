@@ -11,6 +11,9 @@ namespace Driver
         public static void Main()
         {
             allNodes = new Dictionary<string, Node>();
+            object a = 3;
+            a += "a";
+            Console.WriteLine(a);
             //Edge.AddEdge("node1", "node2", "movie between 1 and 2 ");
             //Edge.AddEdge("node1", "node2", "movie between 1 and 2 dup ");
             //Edge.AddEdge("node2", "node1", "movie between 1 and 2 dup ");

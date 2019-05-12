@@ -10,7 +10,7 @@ namespace Input
     public static class MovieFile
     {
         private static List<string[]> allData = new List<string[]>();
-        private static void Get()
+        public static void Get()
         { 
             FileStream fileStream = new FileStream("Movies.txt", FileMode.OpenOrCreate);
             StreamReader streamReader = new StreamReader(fileStream);
@@ -20,6 +20,7 @@ namespace Input
             }
             streamReader.Close();
             fileStream.Close();
+            Set();
         }
         private static void Set()
         {
