@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Discoveries.cs" />
+    <Compile Include="BFS.cs" />
+    <Compile Include="BFSinfo.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Driver.cs" />
