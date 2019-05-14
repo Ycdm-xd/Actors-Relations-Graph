@@ -24,17 +24,17 @@ namespace Graph
                 return ends.Item2;
             return ends.Item1;
         }
-        public static void AddEdge(string name1, string name2, string movie)
+        public static void AddEdge(string name1, string name2, string movie) // Overall: Linear
         {
             Node node1, node2;
-            if (!Program.allNodes.ContainsKey(name1))
+            if (!Program.allNodes.ContainsKey(name1)) // Linear
             {
                 node1 = new Node(name1);
                 Program.allNodes.Add(name1, node1);
             }
             else
             {
-                node1 = Program.allNodes[name1];
+                node1 = Program.allNodes[name1]; // Linear
             }
             if (!Program.allNodes.ContainsKey(name2))
             {
@@ -45,8 +45,7 @@ namespace Graph
             {
                 node2 = Program.allNodes[name2];
             }
-            node1.addNode(node2, movie);
-
+            node1.AddNode(node2, movie); // Linear
         }
     }
 
@@ -54,24 +53,24 @@ namespace Graph
     {
         public string name;
         public BFSinfo info;
-        public Dictionary<string, Edge> neighbours; // Dol direct neighbours (Degree 1)
-        public Dictionary<Node, Node> discoveries;
+        public Dictionary<string, Edge> neighbours; 
+        public Dictionary<Node, Edge> discoveries;
         public Node(String name)
         {
             this.name = name;
             neighbours = new Dictionary<string, Edge>();
-            discoveries = new Dictionary<Node, Node>();
+            discoveries = new Dictionary<Node, Edge>();
+            info = new BFSinfo();
         }
 
 
-        public void addNode(Node other, string movie) // ¯\_(ツ)_/¯
+        public void AddNode(Node other, string movie) // Linear
         {
             if (!neighbours.ContainsKey(other.name))
             {
                 Edge Microsoft = new Edge(this, other, movie, 1);
                 neighbours.Add(other.name, Microsoft);
                 other.neighbours.Add(name, Microsoft);
-                //neighbours.Add(other.name, new Edge(other, movie, 1)); 
             }
             else
             {

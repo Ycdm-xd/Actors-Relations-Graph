@@ -42,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackTrack.cs" />
     <Compile Include="BFS.cs" />
     <Compile Include="BFSinfo.cs" />
+    <Compile Include="Bonus1.cs" />
+    <Compile Include="Bonus2.cs" />
     <Compile Include="Graph.cs" />
-    <Compile Include="Input.cs" />
+    <Compile Include="InputOutput.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnorderedPair.cs" />

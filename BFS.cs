@@ -11,22 +11,47 @@ namespace Solution
 {
     public class BFS
     {
-        public static void Find(string from, string to)
+        public static string Find(string from, string to)
         {
             bool known = false;
-            Node source = Program.allNodes[from];
-            Node destination = Program.allNodes[to];
+            Node source = Program.allNodes[from];   // Ѳ(1) Dictionary search
+            Node destination = Program.allNodes[to];// Ѳ(1) Dictionary search
             Queue<Node> queue = new Queue<Node>();
 
-            BFSinfo.Initialize(source);
+            BFSinfo.Initialize(source);             // Initialize complexity
             queue.Enqueue(source);
-            while (queue.Count > 0)
+            while (queue.Count > 0)                 // O(
             {
                 Node current = queue.Dequeue();
-                foreach (var edge in current.neighbours.Values)
+                List<Edge> ToDo;
+
+                //if (current.discoveries.ContainsKey(destination))
+                //{
+                //    ToDo = new List<Edge>
+                //    {
+                //        current.discoveries[destination]
+                //    };
+                //}
+                //else
+                //{
+                    ToDo = current.neighbours.Values.ToList();
+                //}
+
+                foreach (var edge in ToDo)
                 {
                     Node neighbour = edge.Next(current);
                     BFSinfo Ninfo = neighbour.info;
+
+                    if (neighbour == destination)
+                        known = true;
+
+                    if (Ninfo.color == Color.grey)
+                    {
+                        if (Ninfo.distance == current.info.distance + 1)
+                            if (Ninfo.strength < current.info.strength + edge.weight)
+                                Ninfo.Reset(false);
+                    }
+
                     if (Ninfo.color == Color.white)
                     {
                         Ninfo.color = Color.grey;
@@ -36,11 +61,14 @@ namespace Solution
                         Ninfo.parentEdge = edge;
                         Ninfo.strength = current.info.strength + edge.weight;
 
-                        queue.Enqueue(neighbour);
+                        if (!known)
+                            queue.Enqueue(neighbour);
                     }
                 }
                 current.info.color = Color.black;
             }
+
+            return BackTrack.StringResult(source, destination);
         }
     }
 }

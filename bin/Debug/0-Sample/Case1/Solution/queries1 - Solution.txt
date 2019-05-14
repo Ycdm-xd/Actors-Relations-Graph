@@ -1,0 +1,61 @@
+A/B
+DoS = 1, RS = 3
+CHAIN OF ACTORS: A -> B
+CHAIN OF MOVIES:  => Movie 1 =>
+
+C/E
+DoS = 2, RS = 3
+CHAIN OF ACTORS: C -> A -> E
+CHAIN OF MOVIES:  => Movie 1 => Movie 2 =>
+
+F/G
+DoS = 1, RS = 2
+CHAIN OF ACTORS: F -> G
+CHAIN OF MOVIES:  => Movie 3 =>
+
+E/H
+DoS = 2, RS = 2
+CHAIN OF ACTORS: E -> F -> H
+CHAIN OF MOVIES:  => Movie 3 => Movie 4 =>
+
+E/K
+DoS = 3, RS = 3
+CHAIN OF ACTORS: E -> F -> H -> K
+CHAIN OF MOVIES:  => Movie 3 => Movie 4 => Movie 5 =>
+
+E/N
+DoS = 4, RS = 4
+CHAIN OF ACTORS: E -> F -> H -> J -> N
+CHAIN OF MOVIES:  => Movie 3 => Movie 4 => Movie 5 => Movie 6 =>
+
+C/F
+DoS = 3, RS = 4
+CHAIN OF ACTORS: C -> A -> E -> F
+CHAIN OF MOVIES:  => Movie 1 => Movie 2 => Movie 3 =>
+
+Z/B
+DoS = 2, RS = 4
+CHAIN OF ACTORS: Z -> A -> B
+CHAIN OF MOVIES:  => Movie 0 => Movie 1 =>
+
+Z/D
+DoS = 2, RS = 3
+CHAIN OF ACTORS: Z -> A -> D
+CHAIN OF MOVIES:  => Movie 0 => Movie 2 =>
+
+Z/G
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Z -> A -> E -> G
+CHAIN OF MOVIES:  => Movie 0 => Movie 2 => Movie 3 =>
+
+Z/J
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Z -> A -> E -> F -> H -> J
+CHAIN OF MOVIES:  => Movie 0 => Movie 2 => Movie 3 => Movie 4 => Movie 5 =>
+
+Z/L
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Z -> A -> E -> F -> H -> J -> L
+CHAIN OF MOVIES:  => Movie 0 => Movie 2 => Movie 3 => Movie 4 => Movie 5 => Movie 6 =>
+
+4 ms

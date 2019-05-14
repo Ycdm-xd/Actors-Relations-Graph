@@ -18,11 +18,11 @@ namespace Solution
         public Color color;
         public long distance;
         public long strength;
-        public BFSinfo()
+        public BFSinfo() : base()
         {
             Reset(false);
         }
-        public void Reset(bool isSource)
+        public void Reset(bool isSource) // Linear
         {
             parent = null;
             parentEdge = null;
@@ -38,7 +38,7 @@ namespace Solution
                 color = Color.white;
             }
         }
-        public static void Initialize(Node source)
+        public static void Initialize(Node source) // Ѳ(V)
         {
             foreach (var node in Program.allNodes.Values)
             {

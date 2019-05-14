@@ -2,32 +2,22 @@
 using System.Collections.Generic;
 
 using Graph;
+using InputOutput;
+using Bonus;
 
 namespace Driver
 {
-    public class Program
+    public class Program // Schwarzenegger, Arnold/Quinn, Glenn
     {
-        public static Dictionary<string, Node> allNodes;
-        public static void Main()
+        public static Dictionary<string, Node> allNodes = new Dictionary<string, Node>();
+        public static void Main() // Movies.txt - Queries.txt - Correct.txt
         {
-            allNodes = new Dictionary<string, Node>();
-            object a = 3;
-            a += "a";
-            Console.WriteLine(a);
-            //Edge.AddEdge("node1", "node2", "movie between 1 and 2 ");
-            //Edge.AddEdge("node1", "node2", "movie between 1 and 2 dup ");
-            //Edge.AddEdge("node2", "node1", "movie between 1 and 2 dup ");
-            //Edge.AddEdge("node1", "node3", "movie between 1 and 3 ");
-            //Edge.AddEdge("node2", "node3", "movie between 2 and 3 ");
-            //foreach (var item in allNodes)
-            //{
-            //    Console.WriteLine("In the node : " + item.Value.name);
-            //    Console.WriteLine("contains :");
-            //    foreach (var it in item.Value.neighbours)
-            //    {
-            //        Console.Write(it.Value.next.name + " movie is " + it.Value.movie + " weight is " + it.Value.weight + "\n");
-            //    }
-            //}
+            MoviesFile.Get();
+            //QueriesFile.SolveAll();
+            //QueriesFile.CompareResults();
+            //Bonus1.NotThatHardTbh();
+            while (true)
+                Bonus2.Asdf();
         }
     }
 }
